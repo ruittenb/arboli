@@ -13,6 +13,6 @@ class PersonLayout extends Component
      */
     public function render()
     {
-        return view('layouts.guest');
+        return view('layouts.person');
     }
 }

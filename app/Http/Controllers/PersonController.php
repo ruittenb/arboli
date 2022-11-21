@@ -14,7 +14,8 @@ class PersonController extends Controller
      */
     public function index()
     {
-        //
+        $persons = Person::all();
+        return view('persons');
     }
 
     /**
