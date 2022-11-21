@@ -20,6 +20,7 @@ return new class extends Migration
             $table->string('christian_names', 200)->nullable(false)->default('');
             $table->string('middle_name', 60)->nullable(false)->default('');
             $table->string('last_name', 200)->nullable(false)->default('?');
+            $table->enum('sex', config('enums.sexes'))->default('UNKNOWN');
             $table->enum('gender', config('enums.genders'))->default('UNKNOWN');
             $table->string('place_birth', 255)->default('');
             // The date columns are strings by design; we might only know a year, or a date without the year.

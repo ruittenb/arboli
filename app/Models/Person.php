@@ -19,6 +19,7 @@ class Person extends Model
         'christian_names',
         'middle_name',
         'last_name',
+        'sex',
         'gender',
         'place_birth',
         'date_birth',
