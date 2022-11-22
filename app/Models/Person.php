@@ -3,11 +3,12 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Model;
 
 class Person extends Model
 {
-    //use HasFactory;
+    use HasFactory;
 
     protected $table = 'persons';
 
@@ -38,12 +39,12 @@ class Person extends Model
         'remark',
     ];
 
-    public function father(): Person
+    public function father(): BelongsTo
     {
         return $this->belongsTo(self::class, 'father_id');
     }
 
-    public function mother(): Person
+    public function mother(): BelongsTo
     {
         return $this->belongsTo(self::class, 'mother_id');
     }
