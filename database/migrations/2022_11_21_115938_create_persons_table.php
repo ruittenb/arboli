@@ -32,11 +32,13 @@ return new class extends Migration
             $table->string('cause_death', 255)->default('');
             $table->string('place_buried', 200)->default('');
             $table->string('date_buried', 10)->default('');
+
             // Parent FK's are overridden by a person_x_relation record for the biological parents of this person.
             $table->unsignedBigInteger('father_id')->nullable();
             $table->unsignedBigInteger('mother_id')->nullable();
             $table->foreign('father_id')->references('id')->on('persons')->cascadeOnUpdate()->nullOnDelete();
             $table->foreign('mother_id')->references('id')->on('persons')->cascadeOnUpdate()->nullOnDelete();
+
             $table->string('photo', 255)->nullable();
             $table->string('remark', 255)->default('');
 

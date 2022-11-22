@@ -3,8 +3,10 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
-use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Model\Relation;
+use Illuminate\Database\Eloquent\Relations\BelongsTo;
+use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 
 class Person extends Model
 {
@@ -47,5 +49,15 @@ class Person extends Model
     public function mother(): BelongsTo
     {
         return $this->belongsTo(self::class, 'mother_id');
+    }
+
+    public function parentRelations(): BelongsToMany
+    {
+        return $this->belongsToMany(
+            Relation::class,
+            'person_x_relation',
+            'person_id',
+            'relation_id',
+        );
     }
 }

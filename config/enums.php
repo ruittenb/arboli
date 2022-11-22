@@ -25,5 +25,11 @@ return [
         'SUPERFICIAL' => 'superficial',
         'EXTRAMARITAL' => 'extramarital',
         'UNKNOWN' => 'unknown',
-    ]
+    ],
+    'parent_types' => [
+        'BIOLOGICAL' => 'biological',
+        'ADOPTIVE' => 'adoptive',
+        'FOSTER' => 'foster',
+        'UNKNOWN' => 'unknown',
+    ],
 ];

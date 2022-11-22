@@ -6,6 +6,7 @@ use App\Models\Person;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
+use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 
 class Relation extends Model
 {
@@ -36,5 +37,15 @@ class Relation extends Model
     public function partner2(): BelongsTo
     {
         return $this->belongsTo(Person::class, 'partner2_id');
+    }
+
+    public function children(): BelongsToMany
+    {
+        return $this->belongsToMany(
+            Person::class,
+            'person_x_relation',
+            'relation_id',
+            'person_id',
+        );
     }
 }

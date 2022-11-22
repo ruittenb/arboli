@@ -28,8 +28,8 @@ Route::middleware('auth')->group(function () {
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 
-    Route::get('/persons', 'PersonController@index');
-    Route::get('/api/person', [PersonController::class, 'edit']);
+    //Route::get('/person/{id}', [PersonController::class, 'show']);
+    Route::resource('persons', PersonController::class);
 });
 
 require __DIR__.'/auth.php';

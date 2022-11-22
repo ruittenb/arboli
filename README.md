@@ -2,6 +2,9 @@
 
 Family tree software in PHP/Laravel/Javascript/MySQL.
 
+This project is Work-In-Progress. This project is a rewrite of the
+[Framework-less version](https://sourceforge.net/projects/arboli/).
+
 ## About Laravel
 
  - Laravel [documentation](https://laravel.com/docs)
